@@ -10,11 +10,11 @@ df = pd.read_csv("autos_prepared.csv")
 # DIESE VERWENDEN WIR FÜR DIE VORHERSAGE DES PREISES
 points = df[["kilometer", "price"]].values
 
-
+# DEFINITION DER LINEAREN FUNKTION
 def f(a, b, x):
     return a * x + b
 
-
+# DEFINITION DER KOSTENFUNKTION
 def J(a, b, x, y):
     return np.mean((y - (a * x + b))**2)
 
@@ -25,6 +25,7 @@ def J_ableitung_a(a, b, x, y):
 
 def J_ableitung_b(a, b, x, y):
     return np.mean(((-2) * (((-a) * x) -b + y)))
+
 
 lr = 0.0000000000005
 
